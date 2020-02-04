@@ -1,0 +1,604 @@
+﻿@keyframes rotate {
+    from {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@font-face {
+    font-family: 'Push';
+    src: url('PushBlack.woff2') format('woff2'),
+        url('PushBlack.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+body{
+    background-color: #212121;
+}
+header{
+    background: url(../img/notebook-1971495_1920.jpg) no-repeat top center;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    background-attachment: fixed;
+    box-shadow: inset 0 150px 10000px #000;
+}
+.logotype{
+    font-family: 'Push';
+    font-weight: 900;
+    color: #fff;
+    font-size: 36px;
+}
+.logotype a{
+    color: #fff;
+    text-decoration: none;
+}
+.logotype a:hover{
+    color: #0DDE05;
+    text-decoration: none;
+}
+.capr{
+    top: 70px;
+    font-family: 'Akrobat';
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #0DDE05;
+    text-shadow: 0 0 100px #000;
+}
+.menu {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    background-size: cover;
+    z-index: 50;
+    right: 0;
+    top: 0;
+    text-align: center;
+}
+
+.top-txt h1{
+    color: #0DDE05;
+}
+.top-txt p{
+    color: #0DDE05;
+    text-shadow: 0 0 10px #000, 
+                 0 0 20px #000,     
+                 0 0 30px #000,     
+                 0 0 45px #000;
+}
+.menu ul {
+    margin-top: 200px;
+    padding: 0;
+}
+
+.menu ul li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.menu ul li a {
+    display: block;
+    height: 70px;
+    position: relative;
+    text-decoration: none;
+    color: #0DDE05;
+    font-family: 'Akrobat';
+    text-transform: uppercase;
+    font-size: 24px;
+    letter-spacing: 4px;
+    padding-top: 20px;
+}
+
+.menu ul li a:hover {
+    background-color: rgba(0,255,0,.2);
+    color: #fff;
+
+}
+
+.menu ul li a span {
+    display: block;
+    position: relative;
+    top: -45px;
+    left: 0;
+    height: 100%;
+}
+
+.content hr {
+    width: 150px;
+    height: 1px;
+    background: #333;
+    margin-bottom: 50px;
+}
+
+.content h2 {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    color: #0DDE05;
+    font-family: 'Akrobat';
+}
+
+.content h3 {
+    margin-bottom: 20px;
+    color: #fff;
+    font-family: 'Akrobat';
+}
+
+.content .me1,
+.content .me2,
+.content .me3 {
+    width: 50px;
+    height: 60px;
+    margin-bottom: 20px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    color: #0DDE05;
+}
+
+.content .me1:hover,
+.content .me2:hover,
+.content .me3:hover {
+    -webkit-transition: -webkit-transform 1s;
+    -o-transition: -o-transform 1s;
+    transition: -webkit-transform 1s;
+    -o-transition: transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s;
+    -webkit-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+}
+
+.some-about img {
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+/*блок, в котором расположена карта*/
+.card-block {
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  cursor: pointer;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  /*уменьшает размер блока, чтобы потом увеличить до 1*/
+  -webkit-perspective: 500px;
+          perspective: 500px;
+  /*глубина перспективы/объем 3D-пространства*/
+  background-color: #212121;
+  height: 400px;
+  border-radius: 5px;
+  width: 350px;
+  margin-left: 30px;
+  margin-bottom: 100px;
+}
+/*элемент-карта*/
+.card {
+  position: relative;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  /*определяет то, что дочерние элементы, находятся в 3D-пространстве*/
+  background-color: #212121;
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  margin-top: -10px;
+}
+.card-block:hover {
+  -webkit-transform: scale(1.1) translate3d(0, -10px, 0);
+          transform: scale(1.1) translate3d(0, -10px, 0);
+  /*при наведении на блок с картой, он увеличивается и поднимается вверх*/
+}
+.card-block:hover .side {
+  -webkit-box-shadow: -36px 18px 16px 0 rgba(0, 0, 0, 0.8);
+          box-shadow: -36px 18px 16px 0 rgba(0, 0, 0, 0.8);
+  /*при наведении на блок с картой, для видимой стороны карты задается тень*/
+}
+.side {
+  border-radius: 15px;
+  /*скругляет элемент, чтобы тень повторяла контур img с изображением карты*/
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  display: block;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  /*прячет сторону карты, которая отвернута от пользователя*/
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.4), inset 0 0 10px #000000;
+          box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.4);
+  /*небольшая тень, когда карта «лежит» на поверхности*/
+  background-color: #fff;
+  border: none;
+  border-radius: 3px;
+  height: 100%;
+  width: 100%;
+}
+.side:hover {
+  -webkit-box-shadow: inset 0 0 100px #000;
+          box-shadow: inset 0 0 100px #000;
+}
+/*рубашка карты*/
+.back {
+  position: relative;
+  background-color: #2e2e2e;
+}
+.back h5{
+    font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
+    font-size: 28px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: 20px;
+    color: #fff;
+}
+.back img{
+    margin-top: 30px;
+}
+.back p {
+    margin-top: 175px;
+    color: #fff;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 20px;
+}
+.back p:hover {
+  text-shadow: 0 0 10px #ffdb18, 0 0 20px #ffdb18, 0 0 30px #ffdb18, 0 0 40px #ffdb18, 0 0 50px #ffdb18;
+}
+/*лицевая сторона карты*/
+.front {
+  position: relative;
+  height: 101%;
+  width: 100%;
+  margin-top: -114.5%;
+  /*абсолютно позиционирован внутри родителя и лежит на рубашке карты*/
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  /*отвернута от нас на 180 градусов по своей оси*/
+  background-color: #444;
+}
+.front p{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 35px;
+    font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+}
+.flip {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  /*при добавлении этого класса элемент развернется на 180 градусов*/
+}
+
+.skils h2 {
+    margin-top: 70px;
+    color: #0DDE05;
+    margin-bottom: 50px;
+    font-weight: bold;
+    font-family: 'Akrobat';
+}
+
+.skils h4 {
+    margin-top: 50px;
+    color: #fff;
+}
+
+.skils hr {
+    width: 150px;
+    height: 1px;
+    background: #333;
+}
+
+#portfolio {
+    background: #f2f1ee;
+    height: 770px;
+}
+
+.top-text-pt h2 {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    font-family: 'Akrobat';
+}
+
+.top-text-pt hr {
+    width: 150px;
+    height: 1px;
+    background: #333;
+}
+
+.top-menu li {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    margin: 50px 10px 30px 10px;
+}
+
+.top-menu li {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #f8b410;
+    font-weight: bold;
+    border: none;
+    padding: 5px 10px 2px 10px;
+}
+
+.top-menu li:hover {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+    border-bottom: 2px solid #333;
+}
+
+.top-menu .active {
+    color: #f89310;
+    text-decoration: none;
+    cursor: pointer;
+    border-bottom: 2px solid #f89310;
+}
+
+.content-potfol {
+    margin-top: 100px;
+    margin-bottom: 50px !important;
+}
+
+.work-cont {
+    position: relative;
+}
+
+.work-cont,
+.col-lg-3,
+.col-md-3,
+.col-sm-3,
+.col-xs-3 {
+    padding: 0 !important;
+}
+
+.work {
+    width: 100%;
+    height: 200px;
+}
+
+.port-item-cont {
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0;
+    -webkit-transition: all 0.5s linear 0s;
+    -o-transition: all 0.5s linear 0s;
+    transition: all 0.5s linear 0s;
+}
+
+.port-item-cont h4 {
+    color: #fff;
+    font-size: 21px;
+    font-weight: 700;
+    top: -100px;
+    opacity: 0;
+    -webkit-transition: all 0.3s linear 0s;
+    -o-transition: all 0.3s linear 0s;
+    transition: all 0.3s linear 0s;
+}
+
+.port-item-cont p {
+    padding-top: 30px;
+    color: #fff;
+    font-size: 12pt;
+    margin-bottom: 30px;
+    opacity: 0;
+    -webkit-transition: all 0.5s linear 0s;
+    -o-transition: all 0.5s linear 0s;
+    transition: all 0.5s linear 0s;
+}
+
+.port-item-cont button {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    top: 66px;
+    background: #f8b410;
+    padding: 5px 10px;
+    border: 1px solid #f8b410;
+    border-radius: 3px;
+    opacity: 0;
+    -webkit-transition: all 0.5s linear 0s;
+    -o-transition: all 0.5s linear 0s;
+    transition: all 0.5s linear 0s;
+}
+
+.port-item-cont button:hover {
+    border: none;
+    background: #f89310;
+    text-decoration: none;
+    font-size: 14pt;
+    color: #fff;
+}
+
+.work-cont:hover h4 {
+    top: 0px;
+    opacity: 1;
+}
+
+.work-cont:hover button {
+    top: 0px;
+    opacity: 1;
+}
+
+.work-cont:hover .port-item-cont,
+.work-cont:hover p {
+    opacity: 1;
+}
+
+.article-potf {
+    margin-bottom: 50px;
+}
+
+.more-info {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    background-size: cover;
+    z-index: 25;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+.more-info img {
+    margin-top: 50px;
+    left: 50%;
+}
+
+.more-info p {
+    position: absolute;
+    color: #000;
+    font-weight: bold;
+    top: 13%;
+    right: 0;
+    padding: 5px 6px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.more-info p:hover {
+    background: #f8b410;
+    font-size: 14pt;
+}
+
+.top-text-comm h2 {
+    margin-top: 70px;
+    margin-bottom: 50px;
+    color: #0DDE05;
+    font-family: 'Akrobat';
+}
+
+.top-text-comm hr {
+    width: 150px;
+    height: 1px;
+    background: #333;
+}
+
+.top-text-comm h4 {
+    margin-top: 70px;
+    font-family: 'Akrobat';
+    font-weight: bold;
+    color: #fff;
+}
+
+.info {
+    margin-top: 100px;
+}
+
+.contact-box {
+    padding-bottom: 20px;
+    color: #fff;
+}
+
+.contact-box a {
+    color: #ffff;
+    text-decoration: none;
+}
+
+.contact-box a:hover {
+    text-decoration: none;
+    color: #0DDE05;
+}
+
+.contact-box .fa-vk:before,
+.contact-box .fa-skype:before,
+.contact-box .fa-envelope-o:before,
+.contact-box .fa-desktop:before {
+    font-size: 64px;
+}
+
+.top-text-message {
+    text-align: left;
+    color: #fff;
+}
+
+.top-text-message h4 {
+    font-family: 'Akrobat';
+    font-weight: bold;
+}
+
+.message {
+    text-align: left;
+}
+
+.message input {
+    padding: 5px 20px;
+    color: #0DDE05;
+    outline: none;
+}
+
+.message textarea {
+    padding: 5px 20px;
+    color: #0DDE05;
+    outline: none;
+}
+
+.message .btn-sub {
+    background: #0DDE05;
+    color: #fff;
+    padding: 10px 30px;
+    border: none;
+    font-size: 14pt;
+    text-align: center;
+    border-radius: 5px;
+    font-family: 'Akrobat';
+}
+
+.message .btn-sub:hover {
+    background: rgba(0,255,0,.4);
+}
+
+footer {
+    margin-top: 50px;
+    background: url(../img/notebook-1971495_1920.jpg) no-repeat bottom center;
+    background-attachment: fixed;
+    height: 100px;
+}
+
+footer .text-info {
+    margin-top: 40px;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 0 0 10px #000;
+}
+
+footer .fa-vk {
+    color: #0DDE05;
+    margin-top: 40px;
+}
+
+.modal img {
+    width: 500px;
+}
